@@ -1,22 +1,27 @@
 {
-  "name": "pocket watch",
-  "short_name": "pocket watch",
-  "description": "My JS project.",
+  "name": "Expense Tracker",
+  "short_name": "ExpTracker",
+  "description": "Track your expenses and budget with ease.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0078ff",
   "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["finance", "productivity"],
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
