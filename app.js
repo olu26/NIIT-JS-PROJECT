@@ -12,7 +12,7 @@ const colors = {
 let totalExpData, totalBudgetLeftData;
 
 
-const ctx = document.getElementById("myChart");
+
 const budgetLeftEle = document.getElementById("budgetLeft");
 const totalBudgetEle = document.getElementById("totalBudget");
 const totalExpEle = document.getElementById("totalExp");
@@ -172,28 +172,7 @@ function renderTransHistory(transArr = []) {
 
 renderTransHistory(localStorage.getAllTrans());
 
-function showChart(arr = []) {
-  new Chart(ctx, {
-    type: "pie",
-    data: {
-      labels: ["Expence", "Buget Left"],
-      datasets: [
-        {
-          data: arr,
-          backgroundColor: [colors.red, colors.green],
-          borderWidth: 0,
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        legend: {
-          display: false,
-        },
-      },
-    },
-  });
-}
+
 
 function findChekedTag(arr) {
   let checkedTag = undefined;
@@ -365,4 +344,3 @@ confirmTagBtnEle.addEventListener("click", addNewTag);
 sortTransSelectEle.addEventListener("change", sortTrans);
 
 addTranBtnEvent();
-showChart([totalExpData, totalBudgetLeftData >= 0 ? totalBudgetLeftData : 0]);
