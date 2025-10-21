@@ -1,6 +1,6 @@
 // Service Worker
 
-const CACHE_NAME = 'expense-tracker-v1';
+const CACHE_NAME = 'expense-tracker-v1';   //always change cache name when you are making chnages to the app else it will break the code 
 const urlsToCache = [
   '/',
   '/index.html',
@@ -11,7 +11,7 @@ const urlsToCache = [
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'
 ];
 
-// Install event - cache resources
+// install event - cache resources
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -21,18 +21,18 @@ self.addEventListener('install', event => {
   );
 });
 
-// Fetch event - serve from cache if available, otherwise fetch from network
+// fetch event - serve from cache if available, otherwise fetch from network
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Return cached version or fetch from network
+        // return cached version or fetch from network
         return response || fetch(event.request);
       })
   );
 });
 
-// Activate event - clean up old caches
+// activate event - clean up old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
