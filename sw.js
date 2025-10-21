@@ -1,6 +1,6 @@
 // Service Worker
 
-const CACHE_NAME = 'expense-tracker-v1';   //always change cache name when you are making chnages to the app else it will break the code 
+const CACHE_NAME = 'expense-tracker-v2';   //always change cache name when you are making chnages to the app else it will break the code 
 const urlsToCache = [
   '/',
   '/index.html',
